@@ -34,3 +34,22 @@
   color: #61dafb;
 }
 
+.main-nav-button {
+  color: white;
+  font-size: 0.5em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  background-color: #3C3C3C;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+.main-nav-button:hover {
+  background-color: #2B2B2B;
+}
+
+.main-nav-button:active {
+  background-color: #1A1A1A;
+}
+

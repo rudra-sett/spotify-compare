@@ -1,6 +1,4 @@
-import { Router } from 'react-router-dom';
-import Button from './App.js'
-
+import MyComponent from './UserEntry.js'
 
 function AddUsers() {
   
@@ -14,7 +12,8 @@ function AddUsers() {
         <h6 style={{marginTop: '-10px'}}>
           put the links to everyone's Spotify profiles below
         </h6>  
-        {/* <Button>let's go!</Button> */}
+        <MyComponent/>
+        <button class="main-nav-button">let's go!</button>
       </header>      
     </div>
   );
