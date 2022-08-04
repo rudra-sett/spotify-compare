@@ -19,6 +19,20 @@
   color: rgb(38, 38, 38);
 }
 
+.user-entry-list {
+  background-color: #d8ffed;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  color: rgb(38, 38, 38);
+}
+
+.user-entry-list > * {
+  margin: 5px 0;
+}
+
 .Add-users-header {
   background-color: #d8ffed;
   min-height: 100vh;
@@ -36,7 +50,7 @@
 
 .main-nav-button {
   color: white;
-  font-size: 0.5em;
+  font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
   background-color: #3C3C3C;
@@ -53,3 +67,38 @@
   background-color: #1A1A1A;
 }
 
+.add-user-button, .remove-user-button {
+  color: white;
+  font-size: 0.5em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  background-color: #3C3C3C;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+
+.add-user-button:hover {
+  background-color: #2B2B2B;
+}
+
+.add-user-button:active {
+  background-color: #1A1A1A;
+}
+
+.user-entry-field {
+  background-color: white;
+  font-size: 0.5em;
+  margin: 1em;
+  border-radius: 10px;
+  border: none;
+  padding: 0.25em 1em;
+  color: #3C3C3C;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.75);
+}
+
+.user-entry-field:focus {
+  border: none;
+  outline: 2px solid #1DB954;
+}

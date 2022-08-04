@@ -1,4 +1,4 @@
-import MyComponent from './UserEntry.js'
+import UserEntryList from './UserEntry.js'
 
 function AddUsers() {
   
@@ -12,8 +12,8 @@ function AddUsers() {
         <h6 style={{marginTop: '-10px'}}>
           put the links to everyone's Spotify profiles below
         </h6>  
-        <MyComponent/>
-        <button class="main-nav-button">let's go!</button>
+        <UserEntryList/>
+        <button class="main-nav-button">start analysis</button>
       </header>      
     </div>
   );
