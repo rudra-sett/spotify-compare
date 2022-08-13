@@ -6,8 +6,10 @@ class UserEntryList extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      userURLS: ["one","two","three"]
-    }
+      userURLS: props.value,
+      update: props.callback,      
+    }    
+    this.updateItem = this.updateItem.bind(this);
   }
 
   addInputField() {      
@@ -18,15 +20,15 @@ class UserEntryList extends React.Component {
   }
 
   removeInputField() {   
-    const tempArray = this.state.userURLS;
-    tempArray.pop();
+    this.state.userURLS.pop()
     this.setState({
       // use concat to make sure items is a new array
-      userURLS: tempArray
+      userURLS: this.state.userURLS
     });    
   }
 
   updateItem(index,event) {
+    
     this.setState({
       // use concat to make sure items is a new array
       userURLS: this.state.userURLS.map((item,i) => {
@@ -34,18 +36,17 @@ class UserEntryList extends React.Component {
           return event.target.value;
         }
         return item;})
-    });
-    console.log(this.state.userURLS)
+    }, () => {this.state.update(this.state.userURLS)});
   }
+
 
   render() {
     return (
-      <div className='user-entry-list'>
-        {/* {console.log(this.state.userURLS)} */}
+      <div className='user-entry-list'>        
         {this.state.userURLS.map((item, index) => <input className='user-entry-field' key={index} onChange = {(event) => this.updateItem(index, event)}/>)}
         <div>
-          <button class = "add-user-button" onClick={() => this.addInputField()}>add</button>
-          <button class = "remove-user-button" onClick={() => this.removeInputField()}>remove</button>
+          <button className = "add-user-button" onClick={() => this.addInputField()}>add</button>
+          <button className = "remove-user-button" onClick={() => this.removeInputField()}>remove</button>
         </div>
       </div>
      );
