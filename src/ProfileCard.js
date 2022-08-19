@@ -1,13 +1,16 @@
 import React from 'react';
 
-function userCard(profileData) {
+class UserCard extends React.Component {
 
-
-  return (
-  <div className='profile-card'>
-    <img src={profileData.images[0].url || "https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/spotify-512.png"}></img>
-    <h1>{profileData.display_name}</h1>
-  </div>)
+  render() {
+    const { name, images } = this.props;
+    return (
+      <div className='profile-card'>
+        <img src={images[0] ? images[0].url : "https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/spotify-512.png"}></img>
+        <h3>{name}</h3>
+      </div>
+    );
+  }
 }
 
-export default userCard
+export default UserCard;

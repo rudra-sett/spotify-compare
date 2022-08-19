@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import UserEntryList from './UserEntry.js'
-import userCard from './ProfileCard.js';
+import UserCard from './ProfileCard.js';
 import axios from 'axios'
 import _debounce from 'lodash/debounce'
 
@@ -22,7 +22,7 @@ function AddUsers() {
     //console.log("state changed!");
     _debounce(() => {
       //console.log(URLS[0])
-      axios.post("/get-profile",URLS).then(value => {setData(value.data); console.log(profileData)}, reason => {console.log("failed!")})
+      axios.post("/get-profile",URLS).then(value => {setData(value.data);}, reason => {console.log("failed!")})
     }, 1000)
   )
 
@@ -37,7 +37,9 @@ function AddUsers() {
           put the links to everyone's Spotify profiles below
         </h6>
         <UserEntryList value={URLS} callback={setURLS} />
-        {profileData.map((item) => <userCard profileData={item}/>)}
+        <div className='profiles'>
+          {profileData.map((item,i) => <UserCard key = {i} name={item.display_name} images={item.images}/>)}
+        </div>
         <button className="main-nav-button" onClick={getAnalysis}>start analysis</button>
       </header>
     </div>
